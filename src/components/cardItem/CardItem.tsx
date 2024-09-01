@@ -1,6 +1,7 @@
 import style from './CardItem.module.scss'
 
-interface ICardItem {
+export interface ICardItem {
+  id: number
   src?: string
   name: string
   descr: string
@@ -9,6 +10,7 @@ interface ICardItem {
 }
 
 export default function CardItem({
+  id,
   src,
   name,
   descr,
@@ -16,7 +18,7 @@ export default function CardItem({
   price,
 }: ICardItem) {
   return (
-    <li className={style.product}>
+    <li className={style.product} key={id}>
       <img
         src={
           src ??
